@@ -10,12 +10,15 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"test": "vitest"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/kit": "^1.20.4",
 		"@tailwindcss/typography": "^0.5.10",
+		"@types/luxon": "^3.3.2",
+		"@types/seedrandom": "^3.0.6",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
 		"@typescript-eslint/parser": "^6.0.0",
 		"autoprefixer": "^10.4.14",
@@ -33,7 +36,12 @@
 		"tailwindcss": "^3.3.2",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
-		"vite": "^4.4.2"
+		"vite": "^4.4.2",
+		"vitest": "^0.34.6"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"luxon": "^3.4.3",
+		"seedrandom": "^3.0.5"
+	}
 }
