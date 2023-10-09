@@ -1,5 +1,6 @@
 <script>
 	import { base } from '$app/paths';
+	import Guesser from '$lib/components/Guesser.svelte';
 	import { endless } from '$lib/services/endless';
 </script>
 
@@ -56,4 +57,4 @@
 	</div>
 </div>
 
-Content
+<Guesser />

@@ -30,3 +30,28 @@ export function generateDoomsday(minYear: number, maxYear: number, endless = fal
 function randomInt(min: number, max: number, prng = Math.random) {
 	return Math.floor(prng() * (max - min + 1)) + min;
 }
+
+export const REGULAR_JANFEB_DOOMSDAYS: Record<number, number> = {
+	1: 3,
+	2: 28
+};
+
+export const LEAP_JANFEB_DOOMSDAYS: Record<number, number> = {
+	1: 4,
+	2: 29
+};
+
+export const REGULAR_DOOMSDAYS: Record<number, number> = {
+	3: 14,
+	4: 4,
+	5: 9,
+	6: 6,
+	7: 11,
+	8: 8,
+	9: 5,
+	10: 10,
+	11: 7,
+	12: 12
+};
+
+export const CENTURY_ANCHORS = [1, 6, 4, 2]; // Tuesday, Sunday, Friday, Wednesday
