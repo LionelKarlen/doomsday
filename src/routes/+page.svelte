@@ -2,6 +2,8 @@
 	import { base } from '$app/paths';
 	import Guesser from '$lib/components/Guesser.svelte';
 	import { endless } from '$lib/services/endless';
+
+	let update = 0;
 </script>
 
 <div class="absolute left-0 top-0 p-2">
@@ -18,7 +20,11 @@
 <div class="absolute right-0 top-0 flex flex-col-reverse gap-2 p-2">
 	{#if $endless}
 		<div class="opacity-20 hover:opacity-100 transition duration-300">
-			<button class="btn btn-circle btn-ghost" on:click={() => {}}
+			<button
+				class="btn btn-circle btn-ghost"
+				on:click={() => {
+					update = update + 1;
+				}}
 				><svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -57,4 +63,4 @@
 	</div>
 </div>
 
-<Guesser />
+<Guesser {update} />

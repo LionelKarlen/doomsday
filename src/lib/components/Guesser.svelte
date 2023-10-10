@@ -10,9 +10,15 @@
 
 	$: $endless, reset();
 
+	export let update = 0;
+
+	$: update, reset();
+
 	function reset() {
 		date = generateDoomsday($doomsdayConfig.minYear, $doomsdayConfig.maxYear, $endless);
 	}
+
+	$: date, (showSolution = false);
 
 	let showSolution: boolean = false;
 </script>

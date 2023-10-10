@@ -8,7 +8,6 @@
 	export let steps: Step[];
 	let currentStep = $stepStore;
 	$: currentStep = Math.max(currentStep % steps.length, 0);
-	$: console.log(currentStep);
 
 	onDestroy(() => {
 		stepStore.set(currentStep);
