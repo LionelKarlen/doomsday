@@ -31,6 +31,16 @@ function randomInt(min: number, max: number, prng = Math.random) {
 	return Math.floor(prng() * (max - min + 1)) + min;
 }
 
+export function getDoomsday(date: DateTime) {
+	if (date.month > 2) {
+		return REGULAR_DOOMSDAYS[date.month];
+	}
+	if (date.isInLeapYear) {
+		return LEAP_JANFEB_DOOMSDAYS[date.month];
+	}
+	return REGULAR_JANFEB_DOOMSDAYS[date.month];
+}
+
 export const REGULAR_JANFEB_DOOMSDAYS: Record<number, number> = {
 	1: 3,
 	2: 28

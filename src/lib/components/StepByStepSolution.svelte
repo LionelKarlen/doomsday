@@ -22,20 +22,43 @@
 		{/each}
 	</ul>
 
-	<svelte:component this={steps[currentStep].component} {date} />
-
 	<div class="flex flex-row input-group w-full mt-5">
 		<button
+			disabled={currentStep == 0}
+			class:btn-disabled={currentStep == 0}
 			class="btn w-1/2"
 			on:click={() => {
 				currentStep -= 1;
-			}}>previous</button
+			}}
+			><svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-6 h-6"
+			>
+				<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+			</svg>
+			previous</button
 		>
 		<button
 			class="btn w-1/2 btn-success"
 			on:click={() => {
 				currentStep += 1;
-			}}>next</button
-		>
+			}}
+			>next<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="w-6 h-6"
+			>
+				<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+			</svg>
+		</button>
 	</div>
+
+	<svelte:component this={steps[currentStep].component} {date} />
 {/if}
